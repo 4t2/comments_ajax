@@ -1,0 +1,25 @@
+
+<section id="comments" class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+
+<!-- indexer::stop -->
+
+  <?php if ($this->headline): ?>
+    <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
+  <?php endif; ?>
+
+<script>
+	var commentsConfig =
+	{
+		'id' : '<?php echo $this->id; ?>',
+		'parent' : '<?php echo $objPage->id; ?>',
+		'perPage' : <?php echo $this->perPage; ?>,
+		'textLoadingSpinner' : '<?php echo $GLOBALS["TL_LANG"]["MSC"]["com_ajax_loading"] ?>',
+		'textShowAllComments' : '<?php echo $GLOBALS["TL_LANG"]["MSC"]["com_ajax_show_all"] ?>'
+	}
+</script>
+
+  <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
+
+<!-- indexer::continue -->
+
+</section>

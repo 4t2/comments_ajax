@@ -1,11 +1,13 @@
 <?php
 
-
 /**
  * Register the classes
  */
 ClassLoader::addClasses(array
 (
+	// Classes
+	'CommentsAjax'            => 'system/modules/comments_ajax/classes/CommentsAjax.php',
+
 	// Modules
 	'ModuleCommentsAjax'      => 'system/modules/comments_ajax/modules/ModuleCommentsAjax.php',
 ));
@@ -16,7 +18,5 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array
 (
-#	'com_default'      => 'system/modules/comments/templates/comments',
-	'ce_comments'      => 'system/modules/comments_ajax/templates',
-#	'mod_comment_form' => 'system/modules/comments/templates/modules',
+	'ce_comments_ajax' => 'system/modules/comments_ajax/templates'
 ));

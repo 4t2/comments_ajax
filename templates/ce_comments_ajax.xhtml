@@ -1,5 +1,5 @@
 
-<section id="comments" class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
+<div id="comments" class="<?php echo $this->class; ?> block"<?php echo $this->cssID; ?><?php if ($this->style): ?> style="<?php echo $this->style; ?>"<?php endif; ?>>
 
 <!-- indexer::stop -->
 
@@ -7,19 +7,20 @@
     <<?php echo $this->hl; ?>><?php echo $this->headline; ?></<?php echo $this->hl; ?>>
   <?php endif; ?>
 
-<script>
+<script type="text/javascript">
 	var commentsConfig =
 	{
 		'id' : '<?php echo $this->id; ?>',
 		'parent' : '<?php echo $objPage->id; ?>',
-		'perPage' : <?php echo $this->perPage; ?>,
+		'count' : '<?php count($this->comments); ?>',
+		'perPage' : '<?php echo $this->perPage; ?>',
 		'textLoadingSpinner' : '<?php echo $GLOBALS["TL_LANG"]["MSC"]["com_ajax_loading"] ?>',
 		'textShowAllComments' : '<?php echo $GLOBALS["TL_LANG"]["MSC"]["com_ajax_show_all"] ?>'
 	}
 </script>
 
-  <?php include $this->getTemplate('mod_comment_form', 'html5'); ?>
+  <?php include $this->getTemplate('mod_comment_form', 'xhtml'); ?>
 
 <!-- indexer::continue -->
 
-</section>
+</div>
